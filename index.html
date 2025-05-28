@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>	
+	<title>Primer Farmacia de Ximena Vega.</title>
+</head>
+<body background="img/fondo.jpg">
+  <center>
+     <font size="5" face="Broadway" color="#00000">
+     <h1>FARMACIA DE Ximena Vega</h1>
+  	 <div class="app">
+    	<hr color=black>  
+  		<p>
+		<label for="medicina">Medicamentos:</label><br>
+		<select name="instrumento" id="m" size="1" onchange="medi()">
+			  <option value="0" selected>Seleccionar</option>
+			  <option value="1">Paracetamol</option>
+			  <option value="2">Aspirina</option>
+			  <option value="3">Genoprazol</option>
+			  <option value="4">Sinuberase</option>
+			  <option value="5">Enterogermina</option>
+			  <option value="6">Agrifen</option>
+		</select>
+		<br>
+		<p>
+		
+		<a id="ref1"><img id="img" width="350" height="300"></a>
+		
+		<script>
+			var letras="";
+			function calcular(m)
+			{
+						var p=document.getElementById("precio").value
+						var c=document.getElementById("cantidad").value;
+						var r=parseInt(p)*parseInt(c);
+
+						alert("El Medicamento Es: "+letras+"\nEl total es: "+r+"\nLa cantidad es: "+c);
+
+						document.getElementById("imprimir").innerHTML="El total fue:"+r;
+					}
+					function calcular(m)
+			{
+						var p=document.getElementById("precio").value
+						var c=document.getElementById("cantidad").value;
+						var r=parseInt(p)+parseInt(c);
+
+						alert("El Medicamento Es: "+letras+"\nEl total es: "+r+"\nLa cantidad es: "+c);
+
+						document.getElementById("imprimir").innerHTML="El total fue:"+r;
+					}
+
+
+					function sumar(a,b)
+					{
+						var r=parseInt(a.value)+parseInt(b.value);
+						alert("la suma es="+r);
+						document.getElementById("imprimir").innerHTML=r;
+			}
+			function medi()
+			{
+				var ins=document.getElementById("m").value;
+
+				if (parseInt(ins)==0) {
+					document.getElementById("img").src="img/imagen0.jpg";
+					letras="no seleccionaste ningun Medicamento"
+				}
+				if (parseInt(ins)==1) {
+					document.getElementById("img").src="img/imagen1.jpg";
+					letras="PARACETAMOL"
+				}
+					if (parseInt(ins)==2) {
+					document.getElementById("img").src="img/aspirina.jpg";
+					letras="ASPIRINA"
+				}
+				if (parseInt(ins)==3) {
+					document.getElementById("img").src="img/genoprazol.jpg";
+					letras="GENOPRAZOL"
+				}
+				if (parseInt(ins)==4) {
+					document.getElementById("img").src="img/sinuberase.jpg";
+					letras="SINUBERASE"
+				}
+				if (parseInt(ins)==5) {
+					document.getElementById("img").src="img/enterogermina.jpg";
+					letras="ENTEROGERMINA"
+				}
+				if (parseInt(ins)==6) {
+					document.getElementById("img").src="img/agrifen.jpg";
+					letras="AGRIFEN"
+				}
+
+			}
+
+    
+  		</script>
+
+		  <br>
+		  <input type="text" placeholder="Teclea el precio" id="precio">
+		  <input type="text" placeholder="Teclea la cantidad" id="cantidad"><br>
+		  <input type="button" name="suma" value="Imprimir factura" onclick="calcular(m)"><br>
+		  <input type="button" name="suma" value="Sumar" onclick="calcular(m)"><br>
+		  <p id= "imprimir"> </p>
+		  <h4 align="center"><b>Alumna Ximena Guadalupe Vega Lopez - CBTIS 206 - 2025</h4></p>
+
+  </center>
+
+  </div>
+
+</body>
+</html>
